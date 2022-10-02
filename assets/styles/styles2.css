@@ -6,42 +6,46 @@ height: 100px;
 border-bottom: 2px solid darkgray;
 }
 
-#newContainer {
+#container {
 background-color: rgb(159, 217, 255);
 display: flex;
 flex-direction: column;
 justify-content: center;
 flex-wrap: wrap;
 align-items: center;
+height: 20%;
 }
 
 #newContainer1 {
 width: 100%;
 display: flex;
 justify-content: space-evenly;
+padding: 1.2rem;
 }
 
 #newContainer2 {
 width: 100%;
 display: flex;
 justify-content: space-evenly;
-
+padding: 1.2rem;
 }
 
 #newContainer3 {
 width: 100%;
 display: flex;
 justify-content: space-evenly;
+padding: 1.2rem;
 }
 
 .images {
-padding: 2%;
+border: 1px solid black;
 }
 
 #newStatsWindow {
 text-align: center;
-padding: 5%;
+padding: 1%;
 background-color: aliceblue;
+width: 100%;
 }
 
 .footer {
@@ -50,5 +54,5 @@ background-color: lightgray;
 justify-content: center;
 height: 50px;
 border-top: 2px solid darkgray;
-padding-bottom: 5%;
+padding-bottom: 2%;
 }
