@@ -79,46 +79,35 @@ deletion.remove();
 
 var monkey1clicked = false;
 var monkey2clicked = false;
-
-
+var hippo1clicked = false;
+var hippo2clicked = false;
+var tiger1clicked = false;
+var tiger2clicked = false;
 
 function image1Clicked() {
 document.getElementById("monkey-image-1").addEventListener("click", swapImagesMonkey1());
- if (monkey2clicked) {
-  successfulMatches++;
- } else {
-  failedMatches++;
-document.getElementById("monkey-image-1").removeAttribute("src");
-document.getElementById("monkey-image-1").setAttribute("src", "./assets/images/greenbox.png");
- }
+// document.getElementById("monkey-image-1").removeAttribute("src");
+// document.getElementById("monkey-image-1").setAttribute("src", "./assets/images/greenbox.png");
 }
 
 function image2Clicked() {
 document.getElementById("monkey-image-2").addEventListener("click", swapImagesMonkey2());
- if (monkey1clicked) {
-  successfulMatches++;
- }
-console.log(successfulMatches, failedMatches);
 }
 
 function image3Clicked() {
 document.getElementById("hippo-image-1").addEventListener("click", swapImagesHippo1());
-hippo1clicked = true;
 }
 
 function image4Clicked() {
 document.getElementById("hippo-image-2").addEventListener("click", swapImagesHippo2());
-hippo2clicked = true;
 }
 
 function image5Clicked() {
 document.getElementById("tiger-image-1").addEventListener("click", swapImagesTiger1());
-tiger1clicked = true;
 }
 
 function image6Clicked() {
 document.getElementById("tiger-image-2").addEventListener("click", swapImagesTiger2());
-tiger2clicked = true;
 }
 
 function swapImagesMonkey1() {
@@ -126,6 +115,14 @@ var changeMonkey1 = document.getElementById("monkey-image-1");
 changeMonkey1.removeAttribute("src");
 changeMonkey1.setAttribute("src", "./assets/images/monkey.jpg");
 monkey1clicked = true;
+if (monkey2clicked) {
+  successfulMatches++;
+ } else if (hippo1clicked) {
+  failedMatches++;
+  changeMonkey1.removeAttribute("src");
+  changeMonkey1.setAttribute("src", "./assets/images/greenbox.png");
+  monkey1clicked = false;
+ }
 }
 
 function swapImagesMonkey2() {
@@ -133,30 +130,64 @@ var changeMonkey2 = document.getElementById("monkey-image-2");
 changeMonkey2.removeAttribute("src");
 changeMonkey2.setAttribute("src", "./assets/images/monkey.jpg");
 monkey2clicked = true;
+if (monkey1clicked) {
+  successfulMatches++;
+ } else {
+  failedMatches++;
+ }
+ console.log(successfulMatches, failedMatches);
 }
 
 function swapImagesHippo1() {
 var changeHippo1 = document.getElementById("hippo-image-1");
 changeHippo1.removeAttribute("src");
 changeHippo1.setAttribute("src", "./assets/images/hippo.jpg");
+hippo1clicked = true;
+if (hippo2clicked) {
+  successfulMatches++;
+ } else {
+  failedMatches++;
+ }
+ console.log(successfulMatches, failedMatches);
 }
 
 function swapImagesHippo2() {
 var changeHippo2 = document.getElementById("hippo-image-2");
 changeHippo2.removeAttribute("src");
 changeHippo2.setAttribute("src", "./assets/images/hippo.jpg");
+hippo2clicked = true;
+if (hippo1clicked) {
+  successfulMatches++;
+ } else {
+  failedMatches++;
+ }
+ console.log(successfulMatches, failedMatches);
 }
 
 function swapImagesTiger1() {
 var changeTiger1 = document.getElementById("tiger-image-1");
 changeTiger1.removeAttribute("src");
 changeTiger1.setAttribute("src", "./assets/images/tiger.jpg");
+tiger1clicked = true;
+if (tiger2clicked) {
+  successfulMatches++;
+ } else {
+  failedMatches++;
+ }
+ console.log(successfulMatches, failedMatches);
 }
 
 function swapImagesTiger2() {
 var changeTiger2 = document.getElementById("tiger-image-2");
 changeTiger2.removeAttribute("src");
 changeTiger2.setAttribute("src", "./assets/images/tiger.jpg");
+tiger2clicked = true;
+if (tiger1clicked) {
+  successfulMatches++;
+ } else {
+  failedMatches++;
+ }
+ console.log(successfulMatches, failedMatches);
 }
 
 
