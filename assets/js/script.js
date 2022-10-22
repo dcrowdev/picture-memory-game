@@ -1,196 +1,107 @@
-successfulMatches = 0;
-failedMatches = 0;
+let tiger1 = document.createElement('img');
+tiger1.setAttribute('src', './assets/images/tiger.jpg');
+tiger1.setAttribute('data-type', 'tiger');
+tiger1.classList.add('covered', 'image-list');
+let tiger2 = document.createElement('img');
+tiger2.setAttribute('src', './assets/images/tiger2.jpg');
+tiger2.setAttribute('data-type', 'tiger');
+tiger2.classList.add('covered', 'image-list');
+let monkey1 = document.createElement('img');
+monkey1.setAttribute('src', './assets/images/monkey.jpg');
+monkey1.setAttribute('data-type', 'monkey');
+monkey1.classList.add('covered', 'image-list');
+let monkey2 = document.createElement('img');
+monkey2.setAttribute('src', './assets/images/monkey2.jpg');
+monkey2.setAttribute('data-type', 'monkey');
+monkey2.classList.add('covered', 'image-list');
+let hippo1 = document.createElement('img');
+hippo1.setAttribute('src', './assets/images/hippo.jpg');
+hippo1.setAttribute('data-type', 'hippo');
+hippo1.classList.add('covered', 'image-list');
+let hippo2 = document.createElement('img');
+hippo2.setAttribute('src', './assets/images/hippo2.jpg');
+hippo2.setAttribute('data-type', 'hippo');
+hippo2.classList.add('covered', 'image-list');
 
-function transition() {
-  deleteButton();
- var link = document.createElement("link");
-   link.type = "text/css";
-   link.rel = "stylesheet";
-   link.href = "./assets/styles/styles2.css";
-    document.head.appendChild(link);
-//  CREATE MONEKY IMAGE 1 AND APPEND
- var addImageMonkey1 = document.createElement("img");
-  addImageMonkey1.classList.add("images", "monkey-image");
-  addImageMonkey1.setAttribute("id", "monkey-image-1");
-  addImageMonkey1.src = "./assets/images/greenbox.png";
- var src1 = document.getElementById("newContainer1");
-  src1.appendChild(addImageMonkey1);
-  addImageMonkey1.setAttribute("onClick", "image1Clicked()");
-//  CREATE MONKEY IMAGE 2 AND APPEND
- var addImageMonkey2 = document.createElement("img");
-  addImageMonkey2.classList.add("images", "monkey-image");
-  addImageMonkey2.src = "./assets/images/greenbox.png";
-  addImageMonkey2.setAttribute("id", "monkey-image-2");
-  src1.appendChild(addImageMonkey2);
-  addImageMonkey2.setAttribute("onClick", "image2Clicked()");
-// CREATE HIPPO IMAGE 1 AND APPEND
- var addImageHippo1 = document.createElement("img");
-  addImageHippo1.classList.add("images", "hippo-image");
-  addImageHippo1.setAttribute("id", "hippo-image-1");
-  addImageHippo1.src = "./assets/images/greenbox.png";
- var src2 = document.getElementById("newContainer2");
-  src2.appendChild(addImageHippo1);
-  addImageHippo1.setAttribute("onClick", "image3Clicked()");
-//  CREATE HIPPO IMAGE 2 AND APPEND
- var addImageHippo2 = document.createElement("img");
-  addImageHippo2.classList.add("images", "hippo-image");
-  addImageHippo2.src = "./assets/images/greenbox.png";
-  addImageHippo2.setAttribute("id", "hippo-image-2");
-  src2.appendChild(addImageHippo2);
-  addImageHippo2.setAttribute("onClick", "image4Clicked()");
-//  CREATE TIGER IMAGE 1 AND APPEND
- var addImageTiger1 = document.createElement("img");
-  addImageTiger1.classList.add("images", "tiger-image");
-  addImageTiger1.setAttribute("id", "tiger-image-1");
-  addImageTiger1.src = "./assets/images/greenbox.png";
- var src3 = document.getElementById("newContainer3");
-  src3.appendChild(addImageTiger1);
-  addImageTiger1.setAttribute("onClick", "image5Clicked()");
-//  CREATE TIGER IMAGE 2 AND APPEND
- var addImageTiger2 = document.createElement("img");
-  addImageTiger2.classList.add("images", "tiger-image");
-  addImageTiger2.src = "./assets/images/greenbox.png";
-  addImageTiger2.setAttribute("id", "tiger-image-2");
-  src3.appendChild(addImageTiger2);
-  addImageTiger2.setAttribute("onClick", "image6Clicked()");
-//  APPEND GAME STATS -- SUCCESSFUL MATCHES
- var createP = document.createElement("p");
-  createP.setAttribute("id", "success-text");
- var getStatsWindow = document.getElementById("newStatsWindow");
-  getStatsWindow.appendChild(createP);
-  document.getElementById("success-text").textContent += "Successful Matches: 0";
-//  APPEND GAME STATS -- FAILED MATCHES
- var createP2 = document.createElement("p");
-  createP2.setAttribute("id", "failedMatch-text");
- var getStatsWindow = document.getElementById("newStatsWindow");
-  getStatsWindow.appendChild(createP2);
-  document.getElementById("failedMatch-text").textContent += "Failed Matches: 0";
 
+let imgArr = [tiger1, tiger2, monkey1, monkey2, hippo1, hippo2]
+let container = document.getElementById('container')
+let startBtn = document.getElementById('playgame')
+let valueHolderArr = [];
+
+function shuffleImages(array) {
+  let m = array.length, t, i;
+  while (m) {
+    i = Math.floor(Math.random() * m--);
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+  return array;
+}
+let newImgArr = shuffleImages(imgArr);
+
+startBtn.addEventListener('click', function () {
+  startBtn.remove();
+  for (let i = 0; i < newImgArr.length; i++) {
+    container.appendChild(newImgArr[i]);
+  }
+});
+
+function checkClicked(event) {
+  if (event.target.nodeName == "IMG") {
+    imageClicked(event);
+  }
+}
+
+function imageClicked(event) {
+  event.target.classList.remove('covered');
+  event.target.classList.add('uncovered');
+  valueHolderArr.push(event.target.dataset.type)
+  if (valueHolderArr.length > 1) {
+    compareValues(valueHolderArr[0], valueHolderArr[1])
+    valueHolderArr = [];
+  }
+  return;
+}
+
+function compareValues(value1, value2) {
+  if (value1 === value2) {
+    setTimeout(matchAlert, 1000);
+    console.log(newImgArr)
+    setTimeout(removeUncovered, 2000);
+  } else {
+  setTimeout(noMatchAlert, 1000);
+  setTimeout(checkValArrLength, 1000)
+}
+}
+
+function matchAlert() {
+  alert('match!');
+}
+
+function noMatchAlert() {
+  alert('sorry no match!');
+}
+
+function checkValArrLength() {
+  let imageList = document.getElementsByClassName('image-list')
+  for (let i = 0; i < imageList.length; i++) {
+    if (imageList[i].classList.contains('uncovered')) {
+      imageList[i].classList.remove('uncovered');
+      imageList[i].classList.add('covered');
+    }
+  }
 }
 
 
-
-function deleteButton() {
-var deletion = document.getElementById("playgame");
-deletion.remove();
+function removeUncovered() {
+  for (let i = 0; i < newImgArr.length; i++) {
+    if (newImgArr[i].classList.contains('uncovered')) {
+      newImgArr[i].classList.add('unclickable');
+      newImgArr[i].classList.remove('uncovered')
+    }
+  }
 }
 
-
-
-var monkey1clicked = false;
-var monkey2clicked = false;
-var hippo1clicked = false;
-var hippo2clicked = false;
-var tiger1clicked = false;
-var tiger2clicked = false;
-
-function image1Clicked() {
-document.getElementById("monkey-image-1").addEventListener("click", swapImagesMonkey1());
-// document.getElementById("monkey-image-1").removeAttribute("src");
-// document.getElementById("monkey-image-1").setAttribute("src", "./assets/images/greenbox.png");
-}
-
-function image2Clicked() {
-document.getElementById("monkey-image-2").addEventListener("click", swapImagesMonkey2());
-}
-
-function image3Clicked() {
-document.getElementById("hippo-image-1").addEventListener("click", swapImagesHippo1());
-}
-
-function image4Clicked() {
-document.getElementById("hippo-image-2").addEventListener("click", swapImagesHippo2());
-}
-
-function image5Clicked() {
-document.getElementById("tiger-image-1").addEventListener("click", swapImagesTiger1());
-}
-
-function image6Clicked() {
-document.getElementById("tiger-image-2").addEventListener("click", swapImagesTiger2());
-}
-
-function swapImagesMonkey1() {
-var changeMonkey1 = document.getElementById("monkey-image-1");
-changeMonkey1.removeAttribute("src");
-changeMonkey1.setAttribute("src", "./assets/images/monkey.jpg");
-monkey1clicked = true;
-if (monkey2clicked) {
-  successfulMatches++;
- } else if (hippo1clicked) {
-  failedMatches++;
-  changeMonkey1.removeAttribute("src");
-  changeMonkey1.setAttribute("src", "./assets/images/greenbox.png");
-  monkey1clicked = false;
- }
-}
-
-function swapImagesMonkey2() {
-var changeMonkey2 = document.getElementById("monkey-image-2");
-changeMonkey2.removeAttribute("src");
-changeMonkey2.setAttribute("src", "./assets/images/monkey.jpg");
-monkey2clicked = true;
-if (monkey1clicked) {
-  successfulMatches++;
- } else {
-  failedMatches++;
- }
- console.log(successfulMatches, failedMatches);
-}
-
-function swapImagesHippo1() {
-var changeHippo1 = document.getElementById("hippo-image-1");
-changeHippo1.removeAttribute("src");
-changeHippo1.setAttribute("src", "./assets/images/hippo.jpg");
-hippo1clicked = true;
-if (hippo2clicked) {
-  successfulMatches++;
- } else {
-  failedMatches++;
- }
- console.log(successfulMatches, failedMatches);
-}
-
-function swapImagesHippo2() {
-var changeHippo2 = document.getElementById("hippo-image-2");
-changeHippo2.removeAttribute("src");
-changeHippo2.setAttribute("src", "./assets/images/hippo.jpg");
-hippo2clicked = true;
-if (hippo1clicked) {
-  successfulMatches++;
- } else {
-  failedMatches++;
- }
- console.log(successfulMatches, failedMatches);
-}
-
-function swapImagesTiger1() {
-var changeTiger1 = document.getElementById("tiger-image-1");
-changeTiger1.removeAttribute("src");
-changeTiger1.setAttribute("src", "./assets/images/tiger.jpg");
-tiger1clicked = true;
-if (tiger2clicked) {
-  successfulMatches++;
- } else {
-  failedMatches++;
- }
- console.log(successfulMatches, failedMatches);
-}
-
-function swapImagesTiger2() {
-var changeTiger2 = document.getElementById("tiger-image-2");
-changeTiger2.removeAttribute("src");
-changeTiger2.setAttribute("src", "./assets/images/tiger.jpg");
-tiger2clicked = true;
-if (tiger1clicked) {
-  successfulMatches++;
- } else {
-  failedMatches++;
- }
- console.log(successfulMatches, failedMatches);
-}
-
-
-function checks () {
-
-}
+container.addEventListener('click', checkClicked);

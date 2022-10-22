@@ -1,3 +1,24 @@
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+.hide {
+display: none;
+}
+
+.unclickable {
+pointer-events: none;
+}
+
+img {
+height: 200px;
+width: 200px;
+margin: 1%;
+border: 1px solid black;
+}
+
 .header {
 display: flex;
 background-color: lightgray;
@@ -8,6 +29,24 @@ border-bottom: 2px solid darkgray;
 
 #container {
 text-align: center;
+height: 800px;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-items: center;
+}
+
+.covered {
+content: url(../../assets/images/greenbox.png)
+}
+
+button {
+color: white;
+font-size: 35px;
+background-color: red;
+border: 1px solid black;
+border-radius: 10%;
+margin: 15% 45%;
 }
 
 .footer {
@@ -19,11 +58,3 @@ border-top: 2px solid darkgray;
 padding-bottom: 5%;
 }
 
-button {
-color: white;
-font-size: 35px;
-background-color: red;
-border: 1px solid black;
-border-radius: 10%;
-margin: 15% 45%;
-}
