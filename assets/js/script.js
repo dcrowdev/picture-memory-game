@@ -25,9 +25,13 @@ hippo2.classList.add('covered', 'image-list');
 
 
 let imgArr = [tiger1, tiger2, monkey1, monkey2, hippo1, hippo2]
+let imageList = document.getElementsByClassName('image-list')
 let container = document.getElementById('container')
+let container2 = document.getElementById('container2')
 let startBtn = document.getElementById('playgame')
+let resetBtn = document. getElementById('reset')
 let valueHolderArr = [];
+let matchCount = 0;
 
 function shuffleImages(array) {
   let m = array.length, t, i;
@@ -67,11 +71,11 @@ function imageClicked(event) {
 
 function compareValues(value1, value2) {
   if (value1 === value2) {
-    setTimeout(matchAlert, 1000);
-    console.log(newImgArr)
-    setTimeout(removeUncovered, 2000);
+    setTimeout(matchAlert, 500);
+    setTimeout(removeUncovered, 1000);
+    matchCount += 2;
   } else {
-  setTimeout(noMatchAlert, 1000);
+  setTimeout(noMatchAlert, 500);
   setTimeout(checkValArrLength, 1000)
 }
 }
@@ -85,7 +89,6 @@ function noMatchAlert() {
 }
 
 function checkValArrLength() {
-  let imageList = document.getElementsByClassName('image-list')
   for (let i = 0; i < imageList.length; i++) {
     if (imageList[i].classList.contains('uncovered')) {
       imageList[i].classList.remove('uncovered');
@@ -99,9 +102,42 @@ function removeUncovered() {
   for (let i = 0; i < newImgArr.length; i++) {
     if (newImgArr[i].classList.contains('uncovered')) {
       newImgArr[i].classList.add('unclickable');
-      newImgArr[i].classList.remove('uncovered')
+      newImgArr[i].classList.remove('uncovered');
     }
   }
+    if (matchCount > 5) {
+      gameOver();
+    }
 }
+
+function gameOver () {
+alert('game over!')
+container.classList.add('hide');
+container2.classList.remove('hide')
+resetBtn.classList.remove('hide')
+}
+
+
+resetBtn.addEventListener('click', function () {
+  resetBtn.classList.add('hide');
+function shuffleImages(array) {
+  let m = array.length, t, i;
+  while (m) {
+    i = Math.floor(Math.random() * m--);
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+  return array;
+}
+let newImgArr = shuffleImages(imgArr);
+newImgArr.forEach(img => img.classList.add('covered'))
+newImgArr.forEach(img => img.classList.remove('unclickable'))
+matchCount = 0;
+  container.classList.remove('hide')
+  for (let i = 0; i < newImgArr.length; i++) {
+    container.appendChild(newImgArr[i]);
+  }
+});
 
 container.addEventListener('click', checkClicked);
