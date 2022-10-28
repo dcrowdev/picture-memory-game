@@ -1,25 +1,25 @@
 let tiger1 = document.createElement('img');
-tiger1.setAttribute('src', './assets/images/tiger.jpg');
+tiger1.setAttribute('src', './assets/images/game-images/tiger.jpg');
 tiger1.setAttribute('data-type', 'tiger');
 tiger1.classList.add('covered', 'image-list');
 let tiger2 = document.createElement('img');
-tiger2.setAttribute('src', './assets/images/tiger2.jpg');
+tiger2.setAttribute('src', './assets/images/game-images/tiger2.jpg');
 tiger2.setAttribute('data-type', 'tiger');
 tiger2.classList.add('covered', 'image-list');
 let monkey1 = document.createElement('img');
-monkey1.setAttribute('src', './assets/images/monkey.jpg');
+monkey1.setAttribute('src', './assets/images/game-images/monkey.jpg');
 monkey1.setAttribute('data-type', 'monkey');
 monkey1.classList.add('covered', 'image-list');
 let monkey2 = document.createElement('img');
-monkey2.setAttribute('src', './assets/images/monkey2.jpg');
+monkey2.setAttribute('src', './assets/images/game-images/monkey2.jpg');
 monkey2.setAttribute('data-type', 'monkey');
 monkey2.classList.add('covered', 'image-list');
 let hippo1 = document.createElement('img');
-hippo1.setAttribute('src', './assets/images/hippo.jpg');
+hippo1.setAttribute('src', './assets/images/game-images/hippo.jpg');
 hippo1.setAttribute('data-type', 'hippo');
 hippo1.classList.add('covered', 'image-list');
 let hippo2 = document.createElement('img');
-hippo2.setAttribute('src', './assets/images/hippo2.jpg');
+hippo2.setAttribute('src', './assets/images/game-images/hippo2.jpg');
 hippo2.setAttribute('data-type', 'hippo');
 hippo2.classList.add('covered', 'image-list');
 
@@ -27,6 +27,7 @@ hippo2.classList.add('covered', 'image-list');
 let imgArr = [tiger1, tiger2, monkey1, monkey2, hippo1, hippo2]
 let imageList = document.getElementsByClassName('image-list')
 let container = document.getElementById('container')
+let innerContainer = document.getElementById('inner-container')
 let container2 = document.getElementById('container2')
 let startBtn = document.getElementById('playgame')
 let resetBtn = document. getElementById('reset')
@@ -48,7 +49,7 @@ let newImgArr = shuffleImages(imgArr);
 startBtn.addEventListener('click', function () {
   startBtn.remove();
   for (let i = 0; i < newImgArr.length; i++) {
-    container.appendChild(newImgArr[i]);
+    innerContainer.appendChild(newImgArr[i]);
   }
 });
 
@@ -136,7 +137,7 @@ newImgArr.forEach(img => img.classList.remove('unclickable'))
 matchCount = 0;
   container.classList.remove('hide')
   for (let i = 0; i < newImgArr.length; i++) {
-    container.appendChild(newImgArr[i]);
+    innerContainer.appendChild(newImgArr[i]);
   }
 });
 
