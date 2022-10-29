@@ -7,16 +7,21 @@ font-family: 'starWarsFont';
 
 body {
 height: 100vh;
+color: gold;
+margin: 0;
 }
 
 .bg {
-  /* The image used */
   background-image: url(../images/background/mug-bg.png);
-
-  /* Full height */
   height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  /* Center and scale the image nicely */
+.second-bg {
+  background-image: url(../images/background/stars.jpeg);
+  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -47,6 +52,7 @@ flex: 0 0 18%;
 display: flex;
 background-color: lightgray;
 justify-content: center;
+align-items: center;
 height: 10%;
 border-bottom: 2px solid darkgray;
 }
@@ -71,19 +77,19 @@ content: url(../../assets/images/game-images/greenbox.png)
 }
 
 button {
-color: white;
+color: goldenrod;
 font-size: 35px;
-background-color: red;
+background-image: url(../images/background/stars.jpeg);
 border: 1px solid black;
 border-radius: 10%;
-margin: 15% 45%;
+padding: 3%;
 }
 
 .footer {
 display: flex;
 background-color: lightgray;
 justify-content: center;
+align-items: center;
 height: 10%;
 border-top: 2px solid darkgray;
-padding-bottom: 5%;
 }
