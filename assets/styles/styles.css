@@ -12,8 +12,8 @@ margin: 0;
 }
 
 .bg {
-  background-image: url(../images/background/mug-bg.png);
-  height: 100%;
+  background-image: url(../images/background/hyperspace.jpg);
+  height: 80%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -44,7 +44,7 @@ img {
 height: 100px;
 width: 100px;
 margin: 1% 2%;
-border: 1px solid black;
+border: 2px solid white;
 border-radius: 5px;
 flex: 0 0 15%;
 }
@@ -70,8 +70,8 @@ justify-content: center;
 display: flex;
 align-items: center;
 flex-wrap: wrap;
-height: 80%;
-width: 70%;
+height: auto;
+width: 50%
 }
 
 .covered {
