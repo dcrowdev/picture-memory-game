@@ -1,30 +1,126 @@
-let tiger1 = document.createElement('img');
-tiger1.setAttribute('src', './assets/images/game-images/tiger.jpg');
-tiger1.setAttribute('data-type', 'tiger');
-tiger1.classList.add('covered', 'image-list');
-let tiger2 = document.createElement('img');
-tiger2.setAttribute('src', './assets/images/game-images/tiger2.jpg');
-tiger2.setAttribute('data-type', 'tiger');
-tiger2.classList.add('covered', 'image-list');
-let monkey1 = document.createElement('img');
-monkey1.setAttribute('src', './assets/images/game-images/monkey.jpg');
-monkey1.setAttribute('data-type', 'monkey');
-monkey1.classList.add('covered', 'image-list');
-let monkey2 = document.createElement('img');
-monkey2.setAttribute('src', './assets/images/game-images/monkey2.jpg');
-monkey2.setAttribute('data-type', 'monkey');
-monkey2.classList.add('covered', 'image-list');
-let hippo1 = document.createElement('img');
-hippo1.setAttribute('src', './assets/images/game-images/hippo.jpg');
-hippo1.setAttribute('data-type', 'hippo');
-hippo1.classList.add('covered', 'image-list');
-let hippo2 = document.createElement('img');
-hippo2.setAttribute('src', './assets/images/game-images/hippo2.jpg');
-hippo2.setAttribute('data-type', 'hippo');
-hippo2.classList.add('covered', 'image-list');
+let threePo1 = document.createElement('img');
+threePo1.setAttribute('src', './assets/images/game-images/3po.jpg');
+threePo1.setAttribute('data-type', '3po');
+threePo1.classList.add('covered', 'image-list');
+let threePo2 = document.createElement('img');
+threePo2.setAttribute('src', './assets/images/game-images/3po2.jpg');
+threePo2.setAttribute('data-type', '3po');
+threePo2.classList.add('covered', 'image-list');
+let boba1 = document.createElement('img');
+boba1.setAttribute('src', './assets/images/game-images/boba.jpg');
+boba1.setAttribute('data-type', 'boba');
+boba1.classList.add('covered', 'image-list');
+let boba2 = document.createElement('img');
+boba2.setAttribute('src', './assets/images/game-images/boba2.jpg');
+boba2.setAttribute('data-type', 'boba');
+boba2.classList.add('covered', 'image-list');
+let chewy1 = document.createElement('img');
+chewy1.setAttribute('src', './assets/images/game-images/chewy.jpg');
+chewy1.setAttribute('data-type', 'chewy');
+chewy1.classList.add('covered', 'image-list');
+let chewy2 = document.createElement('img');
+chewy2.setAttribute('src', './assets/images/game-images/chewy2.jpg');
+chewy2.setAttribute('data-type', 'chewy');
+chewy2.classList.add('covered', 'image-list');
+let grogu1 = document.createElement('img');
+grogu1.setAttribute('src', './assets/images/game-images/grogu.jpg');
+grogu1.setAttribute('data-type', 'grogu');
+grogu1.classList.add('covered', 'image-list');
+let grogu2 = document.createElement('img');
+grogu2.setAttribute('src', './assets/images/game-images/grogu2.jpg');
+grogu2.setAttribute('data-type', 'grogu');
+grogu2.classList.add('covered', 'image-list');
+let jarjar1 = document.createElement('img');
+jarjar1.setAttribute('src', './assets/images/game-images/jarjar.jpg');
+jarjar1.setAttribute('data-type', 'jarjar');
+jarjar1.classList.add('covered', 'image-list');
+let jarjar2 = document.createElement('img');
+jarjar2.setAttribute('src', './assets/images/game-images/jarjar2.jpg');
+jarjar2.setAttribute('data-type', 'jarjar');
+jarjar2.classList.add('covered', 'image-list');
+let kylo1 = document.createElement('img');
+kylo1.setAttribute('src', './assets/images/game-images/kylo.jpg');
+kylo1.setAttribute('data-type', 'kylo');
+kylo1.classList.add('covered', 'image-list');
+let kylo2 = document.createElement('img');
+kylo2.setAttribute('src', './assets/images/game-images/kylo2.jpg');
+kylo2.setAttribute('data-type', 'kylo');
+kylo2.classList.add('covered', 'image-list');
+let leia1 = document.createElement('img');
+leia1.setAttribute('src', './assets/images/game-images/leia.jpg');
+leia1.setAttribute('data-type', 'leia');
+leia1.classList.add('covered', 'image-list');
+let leia2 = document.createElement('img');
+leia2.setAttribute('src', './assets/images/game-images/leia2.jpg');
+leia2.setAttribute('data-type', 'leia');
+leia2.classList.add('covered', 'image-list');
+let luke1 = document.createElement('img');
+luke1.setAttribute('src', './assets/images/game-images/luke.jpg');
+luke1.setAttribute('data-type', 'luke');
+luke1.classList.add('covered', 'image-list');
+let luke2 = document.createElement('img');
+luke2.setAttribute('src', './assets/images/game-images/luke2.jpg');
+luke2.setAttribute('data-type', 'luke');
+luke2.classList.add('covered', 'image-list');
+let obiwan1 = document.createElement('img');
+obiwan1.setAttribute('src', './assets/images/game-images/obi-wan.jpg');
+obiwan1.setAttribute('data-type', 'obiwan');
+obiwan1.classList.add('covered', 'image-list');
+let obiwan2 = document.createElement('img');
+obiwan2.setAttribute('src', './assets/images/game-images/obi-wan2.jpg');
+obiwan2.setAttribute('data-type', 'obiwan');
+obiwan2.classList.add('covered', 'image-list');
+let r21 = document.createElement('img');
+r21.setAttribute('src', './assets/images/game-images/r2.jpg');
+r21.setAttribute('data-type', 'r2');
+r21.classList.add('covered', 'image-list');
+let r22 = document.createElement('img');
+r22.setAttribute('src', './assets/images/game-images/r22.jpg');
+r22.setAttribute('data-type', 'r2');
+r22.classList.add('covered', 'image-list');
+let rey1 = document.createElement('img');
+rey1.setAttribute('src', './assets/images/game-images/rey.jpg');
+rey1.setAttribute('data-type', 'rey');
+rey1.classList.add('covered', 'image-list');
+let rey2 = document.createElement('img');
+rey2.setAttribute('src', './assets/images/game-images/rey2.jpg');
+rey2.setAttribute('data-type', 'rey');
+rey2.classList.add('covered', 'image-list');
+let solo1 = document.createElement('img');
+solo1.setAttribute('src', './assets/images/game-images/solo.jpg');
+solo1.setAttribute('data-type', 'solo');
+solo1.classList.add('covered', 'image-list');
+let solo2 = document.createElement('img');
+solo2.setAttribute('src', './assets/images/game-images/solo2.jpg');
+solo2.setAttribute('data-type', 'solo');
+solo2.classList.add('covered', 'image-list');
+let vader1 = document.createElement('img');
+vader1.setAttribute('src', './assets/images/game-images/vader.jpg');
+vader1.setAttribute('data-type', 'vader');
+vader1.classList.add('covered', 'image-list');
+let vader2 = document.createElement('img');
+vader2.setAttribute('src', './assets/images/game-images/vader2.jpg');
+vader2.setAttribute('data-type', 'vader');
+vader2.classList.add('covered', 'image-list');
+let windu1 = document.createElement('img');
+windu1.setAttribute('src', './assets/images/game-images/windu.jpg');
+windu1.setAttribute('data-type', 'windu');
+windu1.classList.add('covered', 'image-list');
+let windu2 = document.createElement('img');
+windu2.setAttribute('src', './assets/images/game-images/windu2.jpg');
+windu2.setAttribute('data-type', 'windu');
+windu2.classList.add('covered', 'image-list');
+let yoda1 = document.createElement('img');
+yoda1.setAttribute('src', './assets/images/game-images/yoda.jpg');
+yoda1.setAttribute('data-type', 'yoda');
+yoda1.classList.add('covered', 'image-list');
+let yoda2 = document.createElement('img');
+yoda2.setAttribute('src', './assets/images/game-images/yoda2.jpg');
+yoda2.setAttribute('data-type', 'yoda');
+yoda2.classList.add('covered', 'image-list');
 
 
-let imgArr = [tiger1, tiger2, monkey1, monkey2, hippo1, hippo2]
+let imgArr = [threePo1, threePo2, boba1, boba2, chewy1, chewy2, grogu1, grogu2, jarjar1, jarjar2, kylo1, kylo2, leia1, leia2, luke1, luke2, obiwan1, obiwan2, r21, r22, rey1, rey2, solo1, solo2, vader1, vader2, windu1, windu2, yoda1, yoda2]
 let imageList = document.getElementsByClassName('image-list')
 let container = document.getElementById('container')
 let innerContainer = document.getElementById('inner-container')
@@ -48,6 +144,7 @@ let newImgArr = shuffleImages(imgArr);
 
 startBtn.addEventListener('click', function () {
   startBtn.remove();
+  innerContainer.classList.remove('hide');
   for (let i = 0; i < newImgArr.length; i++) {
     innerContainer.appendChild(newImgArr[i]);
   }
@@ -106,7 +203,7 @@ function removeUncovered() {
       newImgArr[i].classList.remove('uncovered');
     }
   }
-    if (matchCount > 5) {
+    if (matchCount > 29) {
       gameOver();
     }
 }
